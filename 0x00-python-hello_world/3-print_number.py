@@ -1,3 +1,4 @@
 #!/usr/bin/python3
 number = 98
-f"{number} Battery street"
+story = f'{number} Battery street\n'
+print(story)
