@@ -10,15 +10,17 @@ int check_cycle(listint_t *list)
 {
 	listint_t *point = NULL, *fastPoint = NULL;
 
-	point = fastPoint = list;
+	point = list;
+	if (point)
+		fastPoint = point->next;
 	while (point && fastPoint)
 	{
+		if (point == fastPoint)
+			return (1);
 		point = point->next;
 		fastPoint = fastPoint->next;
 		if (fastPoint)
 			fastPoint = fastPoint->next;
-		if (point == fastPoint)
-			return (1);
 	}
 	return (0);
 }
