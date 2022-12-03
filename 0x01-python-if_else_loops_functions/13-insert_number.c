@@ -8,12 +8,9 @@
  * @number: integer to add to list items
  * Return: Null if failed or address of new node
  */
-
 listint_t *insert_node(listint_t **head, int number)
 {
-	listint_t *point;
-	listint_t *newNode;
-	listint_t *prev = NULL;
+	listint_t *point, *newNode, *prev = NULL;
 
 	newNode = malloc(sizeof(listint_t));
 	if (newNode == NULL)
@@ -21,6 +18,11 @@ listint_t *insert_node(listint_t **head, int number)
 	newNode->n = number;
 	newNode->next = NULL;
 	point = *head;
+	if (point == NULL)
+	{
+		*head = newNode;
+		return (newNode);
+	}
 	while (point)
 	{
 		if (prev)
@@ -44,6 +46,7 @@ listint_t *insert_node(listint_t **head, int number)
 		prev = point;
 		point = point->next;
 	}
+	if (prev)
 	prev->next = newNode;
 	return (newNode);
 }
