@@ -8,33 +8,17 @@
  */
 int check_cycle(listint_t *list)
 {
-	listint_t *point = NULL;
-	int j = 0, k;
-	listint_t **len;
+	listint_t *point = NULL, *fastPoint = NULL;
 
-	len = malloc(sizeof(listint_t *) * 20);
-	if (len == NULL)
-		exit(0);
-	point = list;
-	while (point)
+	point = fastPoint = list;
+	while (point && fastPoint)
 	{
-		if (j > 0)
-		{
-			for (k = 0; k < j; k++)
-			{
-				if (point == len[k])
-				{
-					free(len);
-					return (1);
-				}
-			}
-		}
-		len[j] = point;
-		j++;
-		if (j >= 20)
-			len = realloc(len, sizeof(listint_t *) * (j + 20));
 		point = point->next;
+		fastPoint = fastPoint->next;
+		if (fastPoint)
+			fastPoint = fastPoint->next;
+		if (point == fastPoint)
+			return (1);
 	}
-	free(len);
 	return (0);
 }
