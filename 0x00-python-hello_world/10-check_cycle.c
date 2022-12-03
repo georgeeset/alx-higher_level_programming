@@ -12,7 +12,7 @@ int check_cycle(listint_t *list)
 	int j = 0, k;
 	listint_t **len;
 
-	len = malloc(sizeof(listint_t *));
+	len = malloc(sizeof(listint_t *) * 20);
 	if (len == NULL)
 		exit(0);
 	point = list;
@@ -31,7 +31,8 @@ int check_cycle(listint_t *list)
 		}
 		len[j] = point;
 		j++;
-		len = realloc(len, sizeof(listint_t *) * (j + 1));
+		if (j >= 20)
+			len = realloc(len, sizeof(listint_t *) * (j + 20));
 		point = point->next;
 	}
 	free(len);
