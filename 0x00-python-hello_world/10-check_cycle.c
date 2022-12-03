@@ -24,6 +24,7 @@ int check_cycle(listint_t *list)
 			{
 				if (point == len[k])
 				{
+					free(len);
 					return (1);
 				}
 			}
@@ -33,5 +34,6 @@ int check_cycle(listint_t *list)
 		len = realloc(len, sizeof(listint_t *) * (j + 1));
 		point = point->next;
 	}
+	free(len);
 	return (0);
 }
