@@ -15,7 +15,7 @@ int is_palindrome(listint_t **head)
 	run = *head;
 	ptr = *head;
 	if (run == NULL)
-		return (0);
+		return (1);
 	while (run->next)
 	{
 		runner++;
