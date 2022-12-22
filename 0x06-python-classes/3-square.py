@@ -1,4 +1,7 @@
 #!/usr/bin/python3
+""" Write a class Square that defines a square by: private attribute size"""
+
+
 class Square:
 
     """ A class that defines a square by its size
@@ -14,6 +17,7 @@ class Square:
             self.__size = size
 
     def area(self):
-        """ Method that returns the square are of the object
+        """
+        Method that returns the square are of the object
         """
         return (self.__size ** 2)
