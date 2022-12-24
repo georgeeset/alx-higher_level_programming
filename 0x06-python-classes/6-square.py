@@ -8,7 +8,11 @@ class Square:
     """
 
     def _validate_position(self, val):
-        if (not isinstance(val, tuple)) or (val[0] < 0) or (val[1] < 0):
+        if (not isinstance(val, tuple)) or (len(val) != 2):
+            raise TypeError("position must be a tuple of 2 positive integers")
+        if (not isinstance(val[0], int)) or (not isinstance(val[1], int)):
+            raise TypeError("position must be a tuple of 2 positive integers")
+        if (val[0] < 0) or (val[1] < 0):
             raise TypeError("position must be a tuple of 2 positive integers")
         else:
             return (True)
@@ -47,10 +51,12 @@ class Square:
             self.__size = value
 
     def my_print(self):
-        """Print in stdout the square with the character #"""
+        """Print in stdout the square with the character #
+        at the position given by the position attribute.
+        """
         if self.__size == 0:
             print()
-            return ()
+            return
         for j in range(0, self.__position[1]):
             print()
         for i in range(0, self.__size):
