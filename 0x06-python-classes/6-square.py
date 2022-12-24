@@ -8,6 +8,7 @@ class Square:
     """
 
     def _validate_position(self, val):
+        """ verify data before updating position """
         if (not isinstance(val, tuple)) or (len(val) != 2):
             raise TypeError("position must be a tuple of 2 positive integers")
         if (not isinstance(val[0], int)) or (not isinstance(val[1], int)):
@@ -65,9 +66,11 @@ class Square:
 
     @property
     def position(self):
-        return self__position
+        """get position data"""
+        return self.__position
 
     @position.setter
     def position(self, value):
+        """updata the value of position"""
         if self._validate_position(value):
             self.__position = value
