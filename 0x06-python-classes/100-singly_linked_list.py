@@ -1,10 +1,8 @@
 #!/usr/bin/python3
-
 class Node():
     """ A node class of singly linked list"""
 
-
-    def __init__(self, data, next_node=None, ):
+    def __init__(self, data, next_node=None):
         """
         data: contains integer
         next_node: link to next Node connected
@@ -15,7 +13,7 @@ class Node():
         else:
             self._data = data
 
-        if isinstance(next_node, Node) or (next_node == None):
+        if isinstance(next_node, Node) or (next_node is None):
             self._next_node = next_node
         else:
             raise TypeError("next_node must be a Node object")
@@ -41,16 +39,17 @@ class Node():
     @next_node.setter
     def next_node(self, value):
         """ update the value of next_node """
-        if isinstance(value, Node) or (value == None):
+        if isinstance(value, Node) or (value is None):
             self._next_node = value
         else:
             raise TypeError("next_node must be a Node object")
 
+
 class SinglyLinkedList():
     """ this vlass defines a singly linked list"""
 
-
     def __init__(self,):
+        """initialise data"""
         self._head = None
 
     def __str__(self):
@@ -59,16 +58,15 @@ class SinglyLinkedList():
         """
         fullstr = ""
         node = self._head
-        while node != None:
+        while node:
             fullstr += f"{node.data}\n"
             node = node.next_node
         return fullstr[:-1]
 
     def sorted_insert(self, value):
         """Inserts a node in sorted link list"""
-
         new_node = Node(value)
-        if self._head == None:
+        if self._head is None:
             self._head = new_node
             return
 
