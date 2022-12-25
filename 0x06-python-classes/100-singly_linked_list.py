@@ -50,14 +50,14 @@ class SinglyLinkedList():
 
     def __init__(self,):
         """initialise data"""
-        self._head = None
+        self.head = None
 
     def __str__(self):
         """ convert the content of singly linked
         list to string
         """
         fullstr = ""
-        node = self._head
+        node = self.head
         while node:
             fullstr += f"{node.data}\n"
             node = node.next_node
@@ -66,16 +66,16 @@ class SinglyLinkedList():
     def sorted_insert(self, value):
         """Inserts a node in sorted link list"""
         new_node = Node(value)
-        if self._head is None:
-            self._head = new_node
+        if self.head is None:
+            self.head = new_node
             return
 
-        if value < self._head.data:
-            new_node.next_node = self._head
-            self._head = new_node
+        if value < self.head.data:
+            new_node.next_node = self.head
+            self.head = new_node
             return
 
-        point = self._head
+        point = self.head
         while point.next_node and point.next_node.data < value:
             point = point.next_node
         new_node.next_node = point.next_node
