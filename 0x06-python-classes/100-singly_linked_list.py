@@ -1,6 +1,8 @@
 #!/usr/bin/python3
 class Node():
-    """ A node class of singly linked list"""
+    """ A node class of singly linked list
+    private instance attributes introduced
+    """
 
     def __init__(self, data, next_node=None):
         """
@@ -11,39 +13,38 @@ class Node():
         if not isinstance(data, int):
             raise TypeError("data must be an integer")
         else:
-            self._data = data
+            self.__data = data
 
         if isinstance(next_node, Node) or (next_node is None):
-            self._next_node = next_node
+            self.__next_node = next_node
         else:
             raise TypeError("next_node must be a Node object")
 
     @property
     def data(self):
-        """ Retrieve data """
-        return self._data
+        """ Retrieve the value of data """
+        return self.__data
 
     @data.setter
     def data(self, value):
-        """ Change the value of Data"""
+        """ Change the value of Data in node"""
         if not isinstance(value, int):
             raise TypeError("data must be an integer")
         else:
-            self._data = value
+            self.__data = value
 
     @property
     def next_node(self):
         """ Retrieve value of next_node"""
-        return self._next_node
+        return self.__next_node
 
     @next_node.setter
     def next_node(self, value):
         """ update the value of next_node """
         if isinstance(value, Node) or (value is None):
-            self._next_node = value
+            self.__next_node = value
         else:
             raise TypeError("next_node must be a Node object")
-
 
 class SinglyLinkedList():
     """ this vlass defines a singly linked list"""
