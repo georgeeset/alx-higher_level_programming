@@ -1,0 +1,26 @@
+Test file for say my name function
+-----------------------------------
+
+Using ``say_my_name``
+----------------------
+>>> say_my_name = __import__('3-say_my_name').say_my_name
+
+first name must be string:
+      >>> say_my_name(32)
+      Traceback (most recent call last):
+      ...
+      TypeError: first_name must be a string
+
+second name must be string:
+      >>> say_my_name("Hello", 44)
+      Traceback (most recent call last):
+      ...
+      TypeError: last_name must be a string
+
+print full message:
+      >>> say_my_name("Alx", "School")
+      My name is Alx School
+
+print only first_name:
+      >>> say_my_name("George", "Eset")
+      My name is George Eset
