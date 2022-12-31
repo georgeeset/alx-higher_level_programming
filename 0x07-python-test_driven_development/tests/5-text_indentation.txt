@@ -1,0 +1,44 @@
+Test file for indentation function
+___________________________________
+
+Using ``text_indentation``
+--------------------------
+
+Import Function:
+
+>>> text_indentation = __import__('5-text_indentation').text_indentation
+
+Only string is allowed as text argument:
+
+     >>> text_indentation(766)
+     Traceback (most recent call last):
+     ...
+     TypeError: text must be a string
+
+string with .
+     >>> text_indentation("The oldest thing on earth. the same is as old as the earch.")
+     The oldest thing on earth.
+     <BLANKLINE>
+     the same is as old as the earch.
+
+string with ?
+     >>> text_indentation("How tall is the tallest building? if you can tell me, you will get 500usd")
+     How tall is the tallest building?
+     <BLANKLINE>
+     if you can tell me, you will get 500usd
+
+string with :
+     >>> text_indentation("the follwoing are the right signals: you and me")
+     the follwoing are the right signals:
+     <BLANKLINE>
+     you and me
+
+combine all situations:
+     >>> text_indentation("what do you know about planet mars? Letme tell you something: planet mars is known as the red plant. Scientist belive that mars have one time sustained life befor drying up")
+     what do you know about planet mars?
+     <BLANKLINE>
+     Letme tell you something:
+     <BLANKLINE>
+     planet mars is known as the red plant.
+     <BLANKLINE>
+     Scientist belive that mars have one time sustained life befor drying up
