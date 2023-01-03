@@ -3,6 +3,7 @@
 Module contains rectang class
 """
 
+
 class Rectangle():
     """
     Rectangle class defines a rectangle by:
@@ -11,7 +12,7 @@ class Rectangle():
     Instatation with optional width and height of 0
     """
 
-    def _validate_size(self,length, id):
+    def _validate_size(self, length, id):
         """
         Validate the value of length:
         args:
@@ -38,6 +39,7 @@ class Rectangle():
 
         self._validate_size(height, "height")
         self._height = height
+
 
     @property
     def width(self):
