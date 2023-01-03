@@ -4,7 +4,7 @@ Module contains rectang class
 """
 
 
-class Rectangle():
+class Rectangle:
     """
     Rectangle class defines a rectangle by:
     Private instance attribute: width
@@ -52,17 +52,6 @@ class Rectangle():
         """
         return self._width
 
-    @property
-    def height(self):
-        """
-        Getter for height
-        Args:
-            self: instance of the class
-        Return:
-            returns height of rectangel
-        """
-        return self._height
-
     @width.setter
     def width(self, value):
         """
@@ -75,6 +64,18 @@ class Rectangle():
         """
         self._validate_size(value, "width")
         self._width = value
+
+
+    @property
+    def height(self):
+        """
+        Getter for height
+        Args:
+            self: instance of the class
+        Return:
+            returns height of rectangel
+        """
+        return self._height
 
     @height.setter
     def height(self, value):
