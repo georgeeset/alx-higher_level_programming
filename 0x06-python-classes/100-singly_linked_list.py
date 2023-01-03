@@ -46,19 +46,20 @@ class Node():
         else:
             raise TypeError("next_node must be a Node object")
 
+
 class SinglyLinkedList():
     """ this vlass defines a singly linked list"""
 
-    def __init__(self,):
-        """initialise data"""
-        self.head = None
+    def __init__(self):
+        """initialise data for singlylinked class"""
+        self.__head = None
 
     def __str__(self):
         """ convert the content of singly linked
         list to string
         """
         fullstr = ""
-        node = self.head
+        node = self.__head
         while node:
             fullstr += f"{node.data}\n"
             node = node.next_node
@@ -67,16 +68,17 @@ class SinglyLinkedList():
     def sorted_insert(self, value):
         """Inserts a node in sorted link list"""
         new_node = Node(value)
-        if self.head is None:
-            self.head = new_node
+
+        if self.__head is None:
+            self.__head = new_node
             return
 
-        if value < self.head.data:
-            new_node.next_node = self.head
-            self.head = new_node
+        if value < self.__head.data:
+            new_node.next_node = self.__head
+            self.__head = new_node
             return
 
-        point = self.head
+        point = self.__head
         while point.next_node and point.next_node.data < value:
             point = point.next_node
         new_node.next_node = point.next_node
