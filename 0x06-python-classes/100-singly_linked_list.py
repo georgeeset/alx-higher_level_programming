@@ -1,4 +1,10 @@
 #!/usr/bin/python3
+""" this module contains 2 classes:
+    Node: contains property of a single node in a linkedlist
+    singlyLinkedList: contains linked nodes
+"""
+
+
 class Node():
     """ A node class of singly linked list
     private instance attributes introduced
