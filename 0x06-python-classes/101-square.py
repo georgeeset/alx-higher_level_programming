@@ -11,7 +11,7 @@ class Square:
         Private instanve attribute: Position
     """
 
-    def __init__(self, size=0, position=(0,0)):
+    def __init__(self, size=0, position=(0, 0)):
         """
         initialize the class:
         args:
@@ -36,7 +36,7 @@ class Square:
             returns nothing
         Raise:
             TypeError: if size is not an integer
-            ValueError:
+            ValueError: if size is less than 0
         """
 
         if not isinstance(value, int):
@@ -58,9 +58,10 @@ class Square:
             self: instance of class
             value: new tuple value for position
         Raises:
-           TypeError:
+           TypeError: if value is not tuple or not possitive number
 
         """
+
         if isinstance(value, tuple):
             if len(value) == 2:
                 if isinstance(value[0], int) and isinstance(value[1], int):
@@ -89,8 +90,8 @@ class Square:
             text = "\n"
         else:
             for i in range(self._size):
-                text += " " * self.position[0]
+                text += " " * self._position[0]
                 text += "#" * self._size
-                if i < self._size -1:
+                if i < self._size - 1:
                     text += "\n"
         return (text)
