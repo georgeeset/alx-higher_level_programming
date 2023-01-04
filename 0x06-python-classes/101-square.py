@@ -78,7 +78,7 @@ class Square:
         return:
             the current square area
         """
-        return self_size ** 2
+        return self._size ** 2
 
     def __str__(self):
         """prints in stdout the square with che character #"""
