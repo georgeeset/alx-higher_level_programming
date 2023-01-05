@@ -80,18 +80,33 @@ class Square:
         """
         return self._size ** 2
 
-    def __str__(self):
+    def my_print(self):
         """prints in stdout the square with che character #"""
 
-        text = ""
         if self._position[1] > 0:
-            text += "\n" * self._position[1]
+            print("\n" * self._position[1], end="")
         if self._size == 0:
-            text = "\n"
+            print()
         else:
             for i in range(self._size):
-                text += " " * self._position[0]
-                text += "#" * self._size
-                if i < self._size - 1:
-                    text += "\n"
-        return (text)
+                print(" " * self._position[0], end="")
+                print("#" * self._size)
+
+    def __str__(self):
+        rtn = ""
+
+        if self.size == 0:
+            return rtn
+
+        for i in range(self.position[1]):
+            rtn += "\n"
+
+        for i in range(0, self.size):
+            for k in range(self.position[0]):
+                rtn += " "
+            for j in range(self.size):
+                rtn += "#"
+            if i is not (self.size - 1):
+                rtn += "\n"
+
+        return rtn
