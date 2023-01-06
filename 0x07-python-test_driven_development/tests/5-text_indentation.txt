@@ -42,3 +42,34 @@ combine all situations:
      planet mars is known as the red plant.
      <BLANKLINE>
      Scientist belive that mars have one time sustained life befor drying up
+
+Passing an empty string
+    >>> text_indentation('    ')
+
+Passing a new line as a text
+    >>> text_indentation('\n')
+    <BLANKLINE>
+
+Passing a special character and some special characters
+    >>> text_indentation('\n.\n?\n:')
+    <BLANKLINE>
+    .
+    <BLANKLINE>
+    <BLANKLINE>
+    ?
+    <BLANKLINE>
+    <BLANKLINE>
+    :
+    <BLANKLINE>
+
+Passing a text with spaces and one new line
+    >>> text_indentation("   \n")
+    <BLANKLINE>
+
+Passing a text with spaces and one new line 2
+   >>> text_indentation("   \n   ")
+   <BLANKLINE>
+
+Passing a text with spaces and one new line 3
+   >>> text_indentation("\n   ")
+   <BLANKLINE>
