@@ -24,3 +24,33 @@ print full message:
 print only first_name:
       >>> say_my_name("George", "Eset")
       My name is George Eset
+
+Passing None as the last_name
+      >>> say_my_name("John", None)
+      Traceback (most recent call last):
+      ...
+      TypeError: last_name must be a string
+
+Passing None as the first_name
+      >>> say_my_name(None)
+      Traceback (most recent call last):
+      ...
+      TypeError: first_name must be a string
+
+Passing a number as the first_name
+      >>> say_my_name(1)
+      Traceback (most recent call last):
+      ...
+      TypeError: first_name must be a string
+
+Passing a number as the last_name
+      >>> say_my_name("Betty", 0)
+      Traceback (most recent call last):
+      ...
+      TypeError: last_name must be a string
+
+Missing two arguments
+    >>> say_my_name()
+    Traceback (most recent call last):
+    ...
+    TypeError: say_my_name() missing 1 required positional argument: 'first_name'
