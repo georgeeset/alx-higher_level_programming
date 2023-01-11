@@ -42,6 +42,13 @@ Traceback (most recent call last):
 ...
 TypeError: 'int' object is not iterable
 
+test with none as arguemnt
+-------------------------------
+>>> nonarg = MyList(None)
+Traceback (most recent call last):
+...
+TypeError: 'NoneType' object is not iterable
+
 test with boolian argument
 --------------------------------
 >>> tstbool = MyList(True)
