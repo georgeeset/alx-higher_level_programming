@@ -14,4 +14,8 @@ class Square(__import__('9-rectangle').Rectangle):
 
     def area(self):
         """Calculates and returns area"""
-        return super().area()
+        return self.__size * self.__size
+
+    def __str__(self):
+        """Returns String format of the class"""
+        return f"[Square] {self.__size}/{self.__size}"
