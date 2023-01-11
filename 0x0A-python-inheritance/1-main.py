@@ -10,3 +10,5 @@ my_list.append(5)
 print(my_list)
 my_list.print_sorted()
 print(my_list)
+oneList=[0,2,4,1]
+MyList.print_sorted(oneList)
