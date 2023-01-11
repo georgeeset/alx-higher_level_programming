@@ -35,6 +35,12 @@ print sorted list with negative
 >>> compute.print_sorted()
 [-32, -12, -7, -2, 0, 1]
 
+test printint repeated number:
+-----------------------------
+>>> testList = MyList([1, 1, 2, 2, 2, 3, 3, 3])
+>>> testList.print_sorted()
+[1, 1, 2, 2, 2, 3, 3, 3]
+
 test instance with integer
 -------------------------------
 >>> testint = MyList(37)
