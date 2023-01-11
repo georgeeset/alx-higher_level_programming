@@ -16,4 +16,6 @@ class MyList(list):
         args:
            self: instance of the class
         """
-        print(sorted(self))
+        sorted_lst = self.copy()
+        sorted_lst.sort()
+        print(sorted_lst)
