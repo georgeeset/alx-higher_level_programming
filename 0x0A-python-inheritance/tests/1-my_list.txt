@@ -55,3 +55,10 @@ test with more than one arguments
 Traceback (most recent call last):
 ...
 TypeError: list expected at most 1 argument, got 2
+
+test with float
+-----------------
+>>> tstflt = MyList(5.6)
+Traceback (most recent call last):
+...
+TypeError: 'float' object is not iterable
