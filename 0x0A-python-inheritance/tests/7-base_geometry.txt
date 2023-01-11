@@ -1,0 +1,58 @@
+Test BasicGeometry class
+-------------------------------
+
+Using ``7-base_geometry``
+______________________________
+
+>>> BasicGeometry = __import__('7-base_geometry').BaseGeometry
+
+Test Area exception
+----------------------
+>>> a = BasicGeometry()
+
+>>> a.area()
+Traceback (most recent call last):
+...
+Exception: area() is not implemented
+
+Test integer validator with 0
+-----------------------------------
+>>> a.integer_validator("lot", 9)
+
+>>> a.integer_validator("lot", 0)
+Traceback (most recent call last):
+...
+ValueError: lot must be greater than 0
+
+Test with float
+------------------------
+>>> a.integer_validator("rect", 1.1)
+Traceback (most recent call last):
+...
+TypeError: rect must be an integer
+
+>>> a.integer_validator("rect", -10)
+Traceback (most recent call last):
+...
+ValueError: rect must be greater than 0
+
+Test string in integer_validator
+------------------------------------
+>>> a.integer_validator("orbit", "a")
+Traceback (most recent call last):
+...
+TypeError: orbit must be an integer
+
+Test with None as arg
+--------------------------------
+>>> a.integer_validator("orbit", None)
+Traceback (most recent call last):
+...
+TypeError: orbit must be an integer
+
+test with List as arg
+--------------------------
+>>> a.integer_validator("real", [1])
+Traceback (most recent call last):
+...
+TypeError: real must be an integer
