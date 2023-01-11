@@ -9,10 +9,6 @@ class MyList(list):
     This class that inherites for list
     """
 
-    def __init__(self, *args, **kwargs):
-        """ initialize the instance of myList"""
-        list.__init__(self, *args, **kwargs)
-
     def print_sorted(self):
         """
         Class method that print sorted list
