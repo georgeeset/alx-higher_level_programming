@@ -1,77 +1,60 @@
-#Test file for print sorted method
--------------------------------------
-
-using ``print_sorted ``
-_______________________
-
 >>> MyList = __import__('1-my_list').MyList
 
-New instance of class
----------------------
->>> testList = MyList()
+>>> my_list = MyList()
 
-test append method
------------------------
->>> testList.append(77)
->>> testList.append(23)
->>> testList.append(64)
->>> testList.append(43)
->>> print(testList)
-[77, 23, 64, 43]
+>>> print(my_list)
+[]
 
-print sorted List
-----------------------
->>> testList.print_sorted()
-[23, 43, 64, 77]
+>>> my_list.print_sorted()
+[]
 
-original list not affected
-_--------------------------
->>> print(testList)
-[77, 23, 64, 43]
+>>> my_list.append(1)
 
-print sorted list with negative
---------------------------------
->>> compute = MyList([-32, -2, -7, -12, 1, 0])
->>> compute.print_sorted()
-[-32, -12, -7, -2, 0, 1]
+>>> print(my_list)
+[1]
 
-test printint repeated number:
------------------------------
->>> testList = MyList([1, 1, 2, 2, 2, 3, 3, 3])
->>> testList.print_sorted()
-[1, 1, 2, 2, 2, 3, 3, 3]
+>>> my_list.append(2)
 
-test instance with integer
--------------------------------
->>> testint = MyList(37)
+>>> print(my_list)
+[1, 2]
+
+>>> my_list.append(2)
+
+>>> print(my_list)
+[1, 2, 2]
+
+>>> my_list.print_sorted()
+[1, 2, 2]
+
+>>> my_list.append(-2)
+
+>>> print(my_list)
+[1, 2, 2, -2]
+
+>>> my_list.print_sorted()
+[-2, 1, 2, 2]
+
+>>> b = MyList(3)
 Traceback (most recent call last):
 ...
 TypeError: 'int' object is not iterable
 
-test with none as arguemnt
--------------------------------
->>> nonarg = MyList(None)
+>>> b = MyList('a', 'b')
+Traceback (most recent call last):
+...
+TypeError: list() takes at most 1 argument (2 given)
+
+>>> b = MyList(None)
 Traceback (most recent call last):
 ...
 TypeError: 'NoneType' object is not iterable
 
-test with boolian argument
---------------------------------
->>> tstbool = MyList(True)
+>>> b = MyList(True)
 Traceback (most recent call last):
 ...
 TypeError: 'bool' object is not iterable
 
-test with more than one arguments
-----------------------------------
->>> tstargs = MyList([7], [8])
-Traceback (most recent call last):
-...
-TypeError: list expected at most 1 argument, got 2
-
-test with float
------------------
->>> tstflt = MyList(5.6)
+>>> b = MyList(3.3)
 Traceback (most recent call last):
 ...
 TypeError: 'float' object is not iterable
