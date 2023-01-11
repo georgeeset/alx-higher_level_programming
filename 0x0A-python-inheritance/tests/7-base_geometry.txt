@@ -56,3 +56,10 @@ test with List as arg
 Traceback (most recent call last):
 ...
 TypeError: real must be an integer
+
+test with negative value
+------------------------------
+>>> a.integer_validator("base", -8)
+Traceback (most recent call last):
+...
+ValueError: base must be greater than 0
