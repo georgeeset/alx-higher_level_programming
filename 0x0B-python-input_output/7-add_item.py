@@ -15,6 +15,6 @@ if os.path.exists("add_item.json"):
     arg_list = load_file("add_item.json")
 
 for arg in sys.argv[1:]:
-        arg_list.append(arg)
+    arg_list.append(arg)
 
 save_file(arg_list, "add_item.json")
