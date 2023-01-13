@@ -17,7 +17,7 @@ class Student:
     def to_json(self, attrs=None):
         """ returns the dict representation of the instance"""
         if attrs is None or not isinstance(attrs, list):
-            return(self.__dict__)
+            return (self.__dict__)
         d = {}
         for k in attrs:
             if not isinstance(k, str):
