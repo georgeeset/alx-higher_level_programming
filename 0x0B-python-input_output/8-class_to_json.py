@@ -1,7 +1,9 @@
 #!/usr/bin/python3
 """this module contains a function that returns a dictionary
 descriptionwith simple data structure
+
 """
+
 
 def class_to_json(obj):
     """ converts an object to a JSON drepresentation

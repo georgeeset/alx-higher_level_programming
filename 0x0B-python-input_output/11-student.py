@@ -33,4 +33,4 @@ class Student:
             json: JSON file to extract data
         """
         for val in json.keys():
-            self.__dict__[k] = json[k]
+            self.__dict__[val] = json[val]
