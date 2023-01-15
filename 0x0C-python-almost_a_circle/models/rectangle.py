@@ -95,8 +95,8 @@ class Rectangle(Base):
     def display(self):
         """ Display recrtangle with # pattern"""
 
-        for h in range(self.__height):
-            print("#" * self.__width)
+        for h in range(self.height):
+            print("#" * self.width)
 
     def __str__(self):
         """ string representation rectangle"""
@@ -104,3 +104,13 @@ class Rectangle(Base):
         dt = f"[Rectangle] ({self.id}) {self.__x}/{self.__y} - \
 {self.__width}/{self.__height}"
         return (dt)
+
+    def display(self):
+        """print in stdout the rectangle instance with the character
+        # by taking care of x and y
+        """
+
+        print('\n' * self.y, end="")
+        for h in range(self.height):
+            print(' ' * self.x, end="")
+            print('#' * self.width)
