@@ -124,10 +124,19 @@ class Rectangle(Base):
         5th argument should be the y attribute
         """
 
-        if args is not None and len(args) is not 0:
+        if args != None and len(args) is not 0:
             list_atr = ['id', 'width', 'height', 'x', 'y']
             for i in range(len(args)):
                 setattr(self, list_atr[i], args[i])
         else:
             for key, value in kwargs.items():
                 setattr(self, key, value)
+
+    def to_dictionary(self):
+        """returns the dictionary representation of the Rectangle"""
+
+        attrs = ["id", "width", "height", "x", "y"]
+        dictData = {}
+        for data in attrs:
+            dictData[data] =  getattr(self, data)
+        return (dictData)
