@@ -28,3 +28,18 @@ class Square(Rectangle):
         """ update size"""
         self.width = size
         self.height = size
+
+    def update(self, *args, **kwargs):
+        """update dquare with the following dataf format for *args:
+        1st argument should be the id attribute
+        2nd argument should be the size attribute
+        3rd argument should be the x attribute
+        4th argument should be the y attribute
+        """
+        attributes = ["id", "size", "x", "y"]
+        if args is not None and len(args) > 0:
+            for i in range(len(args)):
+                setattr(self, attributes[i], args[i])
+        else:
+            for attr, val in kwargs.items():
+                setattr(self, attr, val)
