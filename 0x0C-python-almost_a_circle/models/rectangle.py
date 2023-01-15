@@ -90,7 +90,7 @@ class Rectangle(Base):
     def area(self):
         """ Area return Area of Rectangle"""
 
-        return (self.__height * self.__width)
+        return (self.height * self.width)
 
     def display(self):
         """ Display recrtangle with # pattern"""
@@ -114,3 +114,20 @@ class Rectangle(Base):
         for h in range(self.height):
             print(' ' * self.x, end="")
             print('#' * self.width)
+
+    def update(self, *args, **kwargs):
+        """ update method assigns argument to each attribute in order:
+        1st argument should be the id attribute
+        2nd argument should be the width attribute
+        3rd argument should be the height attribute
+        4th argument should be the x attribute
+        5th argument should be the y attribute
+        """
+
+        if args is not None and len(args) is not 0:
+            list_atr = ['id', 'width', 'height', 'x', 'y']
+            for i in range(len(args)):
+                setattr(self, list_atr[i], args[i])
+        else:
+            for key, value in kwargs.items():
+                setattr(self, key, value)
