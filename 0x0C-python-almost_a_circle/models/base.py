@@ -4,6 +4,7 @@
 import json
 import os
 import csv
+import turtle
 
 class Base:
     """Base class with private class attributes and constructors"""
@@ -139,3 +140,25 @@ class Base:
             list_ins.append(cls.create(**matrix[index]))
 
         return list_ins
+
+    @staticmethod
+    def draw(list_rectangles, list_squares):
+        """ Opens a window and draws all the recrangles and squares"""
+        tur = turtle.Turtle()
+
+        tur.speed(1)
+        if list_squares:
+            tur.color("blue")
+            for sq in list_squares:
+               for i in range(4):
+                   tur.forward(sq.size)
+                   tur.left(90)
+
+        if list_rectangles:
+            tur.color("red")
+            for sq in list_rectangles:
+               for i in range(2):
+                   tur.forward(sq.width)
+                   tur.left(90)
+                   tur.forward(sq.height)
+                   tur.left(90)
