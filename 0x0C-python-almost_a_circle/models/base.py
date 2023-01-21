@@ -37,8 +37,8 @@ class Base:
         if list_objs:
             for inst in list_objs:
                 new_list.append(cls.to_dictionary(inst))
-            with open("{}.json".format(cls.__name__), 'w') as f:
-                f.write(cls.to_json_string(new_list))
+        with open("{}.json".format(cls.__name__), 'w') as f:
+            f.write(cls.to_json_string(new_list))
 
     @staticmethod
     def from_json_string(json_string):
