@@ -1,4 +1,4 @@
 ## JavaScript Warm Up
 ____
-Javascript is amaising
+Javascript is amazing
 a walk in the park !!
