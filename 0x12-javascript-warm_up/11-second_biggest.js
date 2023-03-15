@@ -5,7 +5,7 @@ if (process.argv.length < 4) {
   let argList = process.argv.slice(2);
   argList = argList.sort(
     function (a, b) {
-      return (a - b);
+      return (b - a);
     }
   );
   console.log(argList[1]);
