@@ -15,11 +15,12 @@ if __name__ == "__main__":
         passwd=argv[2],
         db=argv[3])
     current = connect.cursor()
-    txt_code = f"SELECT * from states WHERE name = '{argv[4]}' ORDER by id ASC"
-    current.execute(txt_code)
+    current.execute(
+        """SELECT * from states WHERE BINARY name='{}' ORDER by id ASC"""
+        .format(sys.argv[4])
+    )
     query_rows = current.fetchall()
     for row in query_rows:
         print(row)
-
     current.close()
     connect.close()
