@@ -17,12 +17,12 @@ if __name__ == "__main__":
     current = connect.cursor()
     current.execute("""SELECT cities.name FROM cities, states WHERE
                     cities.state_id = states.id AND states.name = %s""",
-                    (argv[4],))
+                    (argv[4]))
 
     query_rows = current.fetchall()
     NEW_list = []
     for row in query_rows:
-        NEW_list.append(row[0])
-        print(', '.join(city[0] for city in query_rows))
+        NEW_list.append(row[])
+    print(', '.join(city[0] for city in query_rows))
     current.close()
     connect.close()
