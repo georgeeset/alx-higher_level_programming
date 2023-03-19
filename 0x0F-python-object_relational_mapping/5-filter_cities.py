@@ -18,7 +18,7 @@ if __name__ == "__main__":
     current.execute("""SELECT cities.id, cities.name, states.name
         FROM cities JOIN states ON cities.state_id = states.id
         WHERE states.name = '{}'""",
-                    (sys.argv[4]))
+                    (argv[4]))
 
     query_rows = current.fetchall()
 
