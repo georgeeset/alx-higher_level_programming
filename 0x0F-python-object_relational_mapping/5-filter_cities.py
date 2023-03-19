@@ -22,7 +22,7 @@ if __name__ == "__main__":
     query_rows = current.fetchall()
     NEW_list = []
     for row in query_rows:
-        NEW_list.append(row[])
+        NEW_list.append(row[0])
     print(', '.join(city[0] for city in query_rows))
     current.close()
     connect.close()
