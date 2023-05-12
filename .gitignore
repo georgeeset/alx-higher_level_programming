@@ -131,3 +131,6 @@ dmypy.json
 # Emacs files
 *~
 *#
+
+#personal file name to keep private
+draft*
